@@ -70,8 +70,8 @@ export default function Game() {
           xIsNext={xIsNext}
           squares={currentSquares}
           onPlay={handlePlay}
-          starter1={starter1}
-          starter2={starter2}
+          pokemonX={starter1}
+          pokemonO={starter2}
         />
       </div>
       <div className="game-info">
