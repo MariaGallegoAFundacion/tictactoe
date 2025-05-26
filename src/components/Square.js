@@ -1,7 +1,7 @@
 const pokemonImages = {
   Bulbasaur: '/images/bs.jpg',
   Charmander: '/images/ch.jpg',
-  Squirtle: '/images/sq.png',
+  Squirtle: '/images/sq.jpg',
   Chikorita: '/images/chk.jpg',
   Cyndaquil: '/images/cnd.jpg',
   Totodile: '/images/tt.jpg'
