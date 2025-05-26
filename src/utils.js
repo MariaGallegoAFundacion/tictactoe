@@ -18,3 +18,7 @@ export function calculateWinner(squares) {
 
   return null;
 }
+
+export function isBoardFull(squares) {
+  return squares.every(square => square !== null);
+}

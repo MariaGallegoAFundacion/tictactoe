@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Board from './Board';
 import StarterPopup from './StarterPopup';
 import AudioManager from './AudioManager';
-import { calculateWinner } from '../utils';
+import { calculateWinner, isBoardFull } from '../utils';
 
 export default function Game({ audioEnabled }) {
   const [history, setHistory] = useState([Array(9).fill(null)]);
@@ -17,6 +17,7 @@ export default function Game({ audioEnabled }) {
   const currentSquares = history[currentMove];
 
   const winner = calculateWinner(currentSquares);
+  const isDraw = !winner && isBoardFull(currentSquares);
   const gameStarted = !showFirstPopup && !showSecondPopup;
 
   useEffect(() => {
@@ -88,6 +89,7 @@ export default function Game({ audioEnabled }) {
               onPlay={handlePlay}
               pokemonX={starter1}
               pokemonO={starter2}
+              isDraw={isDraw}
             />
           </div>
           <div className="game-info">

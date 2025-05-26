@@ -1,10 +1,10 @@
 import Square from './Square';
 import { calculateWinner } from '../utils'; 
 
-export default function Board({ xIsNext, squares, onPlay, pokemonX, pokemonO }) {
+export default function Board({ xIsNext, squares, onPlay, pokemonX, pokemonO, isDraw }) {
 
     function handleClick(i) {
-    if (calculateWinner(squares) || squares[i]) return;
+    if (calculateWinner(squares) || squares[i] || isDraw) return;
     const nextSquares = squares.slice();
     nextSquares[i] = xIsNext ? pokemonX : pokemonO;
     onPlay(nextSquares);
@@ -13,6 +13,8 @@ export default function Board({ xIsNext, squares, onPlay, pokemonX, pokemonO }) 
   const winner = calculateWinner(squares);
   const status = winner
     ? `Winner: ${winner}`
+    :  isDraw
+    ? "¡Empate!"
     : `Next player: ${xIsNext ? pokemonX : pokemonO}`;
   
     return (
