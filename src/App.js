@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Game from './components/Game';
 
 export default function App() {
-  const [audioEnabled, setAudioEnabled] = useState(true);
+  const [audioEnabled, setAudioEnabled] = useState(false);
 
   const toggleAudio = () => {
     setAudioEnabled((prev) => !prev);
