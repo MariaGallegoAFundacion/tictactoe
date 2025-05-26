@@ -17,7 +17,7 @@ export default function Board({ xIsNext, squares, onPlay, pokemonX, pokemonO }) 
   
     return (
     <>
-      <div className="status">{status}</div>
+      <div className={`status ${winner ? 'winner' : 'next-player'}`}>{status}</div>
       {[0, 3, 6].map((row) => (
         <div className="board-row" key={row}>
           {[0, 1, 2].map((col) => {
